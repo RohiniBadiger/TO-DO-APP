@@ -1,0 +1,159 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #0a0a2a;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1c1c4d 0%, #0a0a2a 100%);
+  position: relative;
+}
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.falling-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: #ffffff;
+  animation: fall 10s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(100px);
+    opacity: 0;
+  }
+}
+
+.moving-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: #ffffff;
+  animation: move 20s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(-100vw);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+}
+
+.todo-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  z-index: 1;
+}
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.moon-container {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  z-index: 1;
+}
+
+.moon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #f4f4f4;
+  box-shadow: inset -25px 0 #e0e0e0;
+}
+
+.spaceship {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  width: 100px;
+  height: 60px;
+  background-color: #64ffda;
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  animation: hover 4s infinite ease-in-out;
+  z-index: 1;
+}
+
+@keyframes hover {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.astronaut {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  width: 60px;
+  height: 80px;
+  background-color: #ffffff;
+  border-radius: 50% 50% 0 0;
+  animation: float 6s infinite ease-in-out;
+  z-index: 1;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(5deg); }
+  50% { transform: translateY(-30px) rotate(-5deg); }
+}
